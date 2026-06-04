@@ -1,0 +1,23 @@
+name: vcmc-AnimalGuard
+version: '${project.version}'
+main: net.vcmc.animalguard.VcmcAnimalGuard
+api-version: '26.1'
+folia-supported: true
+description: AnimalGuard compatibility plugin for Folia 1.26.x - reads animalguard.db
+
+commands:
+  ag:
+    description: AnimalGuard admin command
+    usage: /ag
+    permission: vcmc.animalguard.admin
+
+permissions:
+  vcmc.animalguard.admin:
+    description: Access to /ag admin GUI
+    default: op
+  vcmc.animalguard.bypass:
+    description: Bypass mob protection (can damage protected mobs)
+    default: false
+  vcmc.animalguard.use:
+    description: Allow players to protect mobs with name tags
+    default: true

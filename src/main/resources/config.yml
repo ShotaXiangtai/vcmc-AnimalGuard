@@ -1,0 +1,35 @@
+# vcmc-AnimalGuard Configuration
+
+# Path to animalguard.db file.
+# Default: reads from original AnimalGuard plugin directory.
+# Use absolute path or relative to server root.
+database-path: "plugins/AnimalGuard/animalguard.db"
+
+# Messages (supports MiniMessage format)
+messages:
+  prefix: "<gray>[<gold>AG</gold>]</gray> "
+  protected: "<red>このMobは保護されています！</red>"
+  already-protected: "<yellow>このMobはすでに保護されています。</yellow>"
+  protect-success: "<green><bold>{name}</bold></green><green> を保護しました！</green>"
+  remove-success: "<green>保護を解除しました。</green>"
+  teleport: "<green>テレポートしました。</green>"
+  entity-not-found: "<red>エンティティが見つかりません（チャンクがロードされていません）。</red>"
+  no-permission: "<red>権限がありません。</red>"
+  reloaded: "<green>設定をリロードしました。保護Mob数: <white>{count}</white></green>"
+
+# GUI settings
+gui:
+  title: "<dark_gray>AnimalGuard 管理パネル"
+  rows: 6
+  items-per-page: 45
+
+# Protection settings
+protection:
+  # Protect from all non-owner player damage
+  player-damage: true
+  # Protect from mob damage
+  mob-damage: true
+  # Protect from explosions
+  explosion: true
+  # Protect from environmental damage (fire, lava, etc.)
+  environmental: true
