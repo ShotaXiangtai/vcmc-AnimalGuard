@@ -33,3 +33,57 @@ protection:
   explosion: true
   # Protect from environmental damage (fire, lava, etc.)
   environmental: true
+  # Only allow protecting mobs listed in protectable-mobs below
+  only-listed-mobs: true
+
+# Protectable friendly/passive/neutral/mount mobs (up to Minecraft 26.3)
+protectable-mobs:
+  - ALLAY
+  - ARMADILLO
+  - AXOLOTL
+  - BAT
+  - BEE
+  - CAMEL
+  - CAMEL_HUSK
+  - CAT
+  - CHICKEN
+  - COD
+  - COPPER_GOLEM
+  - COW
+  - DOLPHIN
+  - DONKEY
+  - FOX
+  - FROG
+  - GLOW_SQUID
+  - GOAT
+  - HAPPY_GHAST
+  - HORSE
+  - IRON_GOLEM
+  - LLAMA
+  - MOOSHROOM
+  - MULE
+  - NAUTILUS
+  - OCELOT
+  - PANDA
+  - PARROT
+  - PIG
+  - POLAR_BEAR
+  - PUFFERFISH
+  - RABBIT
+  - SALMON
+  - SHEEP
+  - SKELETON_HORSE
+  - SNIFFER
+  - SNOW_GOLEM
+  - SQUID
+  - STRIDER
+  - SULFUR_CUBE
+  - TADPOLE
+  - TRADER_LLAMA
+  - TROPICAL_FISH
+  - TURTLE
+  - VILLAGER
+  - WANDERING_TRADER
+  - WOLF
+  - ZOMBIE_HORSE
+  - ZOMBIE_NAUTILUS

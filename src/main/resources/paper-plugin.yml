@@ -1,7 +1,7 @@
 name: vcmc-AnimalGuard
 version: '${project.version}'
 main: net.vcmc.animalguard.VcmcAnimalGuard
-api-version: '26.1'
+api-version: '26.2'
 folia-supported: true
 description: AnimalGuard compatibility plugin for Folia 1.26.x - reads animalguard.db
 

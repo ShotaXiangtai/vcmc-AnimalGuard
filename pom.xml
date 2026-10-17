@@ -6,16 +6,17 @@
 
     <groupId>net.vcmc</groupId>
     <artifactId>vcmc-AnimalGuard</artifactId>
-    <version>1.0.0</version>
+    <version>26.2</version>
     <packaging>jar</packaging>
 
     <name>vcmc-AnimalGuard</name>
     <description>AnimalGuard compatibility plugin for Folia 1.26.x</description>
 
     <properties>
+        <kotlin.version>2.0.21</kotlin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <repositories>
@@ -26,11 +27,16 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
         <!-- Paper API (includes Folia scheduler APIs) -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>[26.1.2.build,)</version>
+            <version>[26.2,)</version>
             <scope>provided</scope>
         </dependency>
 
@@ -52,19 +58,31 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <encoding>UTF-8</encoding>
+                    <jvmTarget>21</jvmTarget>
                 </configuration>
             </plugin>
 
-            <!-- Shade plugin: bundle SQLite + HikariCP into the jar -->
+            <!-- Shade plugin: bundle SQLite + HikariCP + Kotlin stdlib into the jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
